@@ -118,7 +118,7 @@ export async function getDashboard() {
 		}
 
 		const result = await response.json();
-		console.log('making request to dashboard api', result);
+		// console.log('making request to dashboard api', result);
 		return result;
 	} catch (err) {
 		console.log(err);

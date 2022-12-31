@@ -4,9 +4,9 @@ import Typography from "@mui/material/Typography";
 import Title from "./Title";
 import styled from "styled-components";
 
-function preventDefault(event) {
-  event.preventDefault();
-}
+// function preventDefault(event) {
+//   event.preventDefault();
+// }
 
 export const StatisticsContainer = styled.div`
   display: flex;
@@ -20,7 +20,6 @@ export const StatisticsContainer = styled.div`
 `;
 
 export default function Statistics({ dashboard }) {
-  console.log(dashboard);
   return (
     <React.Fragment>
       <Title>Headcount</Title>
