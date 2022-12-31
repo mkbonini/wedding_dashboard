@@ -1,5 +1,6 @@
 import * as React from 'react';
-import Link from '@mui/material/Link';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -15,7 +16,8 @@ export default function GuestList({dashboard}) {
   const guests = dashboard?.guests
   console.log(guests)
   return (
-    <React.Fragment>
+    <Grid item xs={12}>
+    <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', overflow: 'scroll' }}>
       <Title>Guests Invited</Title>
       <Table size="small">
         <TableHead>
@@ -50,6 +52,7 @@ export default function GuestList({dashboard}) {
       {/* <Link color="primary" href="#" onClick={preventDefault} sx={{ mt: 3 }}>
         See more orders
       </Link> */}
-    </React.Fragment>
+    </Paper>
+    </Grid>
   );
 }

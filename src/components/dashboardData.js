@@ -65,7 +65,7 @@ export default function DashboardData({dashboard}) {
               </Grid>
               {/* Recent Orders */}
               <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
+                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column', overflow: 'scroll' }}>
                   <Attending dashboard={dashboard} />
                 </Paper>
               </Grid>
