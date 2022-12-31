@@ -8,10 +8,6 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
 
-function preventDefault(event) {
-  event.preventDefault();
-}
-
 export default function GuestList({dashboard}) {
   const guests = dashboard?.guests
   console.log(guests)

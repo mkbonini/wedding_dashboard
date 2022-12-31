@@ -1,12 +1,7 @@
 import * as React from "react";
-import Link from "@mui/material/Link";
 import Typography from "@mui/material/Typography";
 import Title from "./Title";
 import styled from "styled-components";
-
-// function preventDefault(event) {
-//   event.preventDefault();
-// }
 
 export const StatisticsContainer = styled.div`
   display: flex;
