@@ -9,39 +9,47 @@ import SportsHandballIcon from '@mui/icons-material/SportsHandball';
 import RsvpIcon from '@mui/icons-material/Rsvp';
 import CottageIcon from '@mui/icons-material/Cottage';
 import CommentIcon from '@mui/icons-material/Comment';
+import NoFoodIcon from '@mui/icons-material/NoFood';
 
 export const mainListItems = (
   <React.Fragment>
-    <ListItemButton>
+    <ListItemButton component="a" href="/">
       <ListItemIcon>
         <DashboardIcon />
       </ListItemIcon>
       <ListItemText primary="Dashboard" />
     </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component="a" href="/guests">
       <ListItemIcon>
         <RsvpIcon />
       </ListItemIcon>
-      <ListItemText primary="Invited Guests" />
+      <ListItemText primary="Guests" />
     </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <CottageIcon />
-      </ListItemIcon>
-      <ListItemText primary="Lodgings" />
-    </ListItemButton>
-    <ListItemButton>
-      <ListItemIcon>
-        <SportsHandballIcon />
-      </ListItemIcon>
-      <ListItemText primary="Teams" />
-    </ListItemButton>
-    <ListItemButton>
+    <ListItemButton component="a" href="/comments">
       <ListItemIcon>
         <CommentIcon />
       </ListItemIcon>
       <ListItemText primary="Comments" />
     </ListItemButton>
+    <ListItemButton component="a" href="/allergies">
+      <ListItemIcon>
+        <NoFoodIcon />
+      </ListItemIcon>
+      <ListItemText primary="Allergies" />
+    </ListItemButton>
+    <ListItemButton component="a" href="/lodgings">
+      <ListItemIcon>
+        <CottageIcon />
+      </ListItemIcon>
+      <ListItemText primary="Lodgings" />
+    </ListItemButton>
+    <ListItemButton component="a" href="/teams">
+      <ListItemIcon>
+        <SportsHandballIcon />
+      </ListItemIcon>
+      <ListItemText primary="Teams" />
+    </ListItemButton>
+
   </React.Fragment>
 );
 

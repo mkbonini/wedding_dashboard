@@ -23,19 +23,9 @@ import ArrivalChart from './arrivalChart';
 import Statistics from './Statistics';
 import Countdown from './Countdown';
 import Attending from './Attending';
+import RouteSwitch from './RouteSwitch'
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
+
 
 const drawerWidth = 240;
 
@@ -120,10 +110,10 @@ function DashboardContent({dashboard}) {
               noWrap
               sx={{ flexGrow: 1 }}
             >
-              Dashboard
+              M+M Wedding Dashboard
             </Typography>
             <IconButton color="inherit">
-              <Badge badgeContent={dashboard?.comments.length} color="secondary">
+              <Badge badgeContent={dashboard?.comments.length + dashboard?.diets.length} color="secondary">
                 <NotificationsIcon />
               </Badge>
             </IconButton>
@@ -162,68 +152,7 @@ function DashboardContent({dashboard}) {
           }}
         >
           <Toolbar />
-          <Container maxWidth="lg" sx={{ mt: 4, mb: 4 , height: '500px'}}>
-            <Grid container spacing={3}>
-              {/* Chart */}
-              <Grid item xs={12} md={6} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 300,
-                  }}
-                >
-                  <Chart dashboard={dashboard}/>
-                </Paper>
-              </Grid>
-              <Grid item xs={12} md={4} lg={2}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 300,
-                  }}
-                >
-                  <Countdown />
-                </Paper>
-              </Grid>
-              <Grid item xs={12} md={6} lg={4}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 300,
-                  }}
-                >
-                  <ArrivalChart dashboard={dashboard}/>
-                </Paper>
-              </Grid>
-
-              {/* Recent Deposits */}
-              <Grid item xs={12} md={3} lg={3}>
-                <Paper
-                  sx={{
-                    p: 2,
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: 300,
-                  }}
-                >
-                  <Statistics dashboard={dashboard} />
-                </Paper>
-              </Grid>
-              {/* Recent Orders */}
-              <Grid item xs={12}>
-                <Paper sx={{ p: 2, display: 'flex', flexDirection: 'column' }}>
-                  <Attending dashboard={dashboard} />
-                </Paper>
-              </Grid>
-            </Grid>
-            <Copyright sx={{ pt: 4 }} />
-          </Container>
+          <RouteSwitch dashboard={dashboard}/>
         </Box>
       </Box>
     </ThemeProvider>
