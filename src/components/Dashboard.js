@@ -1,4 +1,5 @@
 import * as React from 'react';
+import {useEffect, useState} from 'react';
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import MuiDrawer from '@mui/material/Drawer';
@@ -15,6 +16,8 @@ import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import { mainListItems} from './listItems';
 import RouteSwitch from './RouteSwitch'
+import { getDashboard} from '../Model.tsx'
+import LinearProgress from '@mui/material/LinearProgress';
 
 
 
@@ -66,11 +69,21 @@ const Drawer = styled(MuiDrawer, { shouldForwardProp: (prop) => prop !== 'open' 
 
 const mdTheme = createTheme();
 
-function DashboardContent({dashboard}) {
+function DashboardContent() {
+  const [dashboard, setDashboard] = useState(null)
   const [open, setOpen] = React.useState(false);
+  const [loading, setLoading] = useState(true);
   const toggleDrawer = () => {
     setOpen(!open);
   };
+
+  useEffect(() => {
+    (async () => {
+      let dashboardResult = await getDashboard();
+      setDashboard(dashboardResult);
+      setLoading(false)
+    })();
+  }, []);
 
   return (
     <ThemeProvider theme={mdTheme}>
@@ -143,7 +156,7 @@ function DashboardContent({dashboard}) {
           }}
         >
           <Toolbar />
-          <RouteSwitch dashboard={dashboard}/>
+          {loading ? <LinearProgress /> : <RouteSwitch dashboard={dashboard}/>}
         </Box>
       </Box>
     </ThemeProvider>

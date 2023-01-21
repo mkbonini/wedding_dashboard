@@ -3,6 +3,8 @@ import DashboardData from '../dashboardData';
 import GuestList from '../guestList';
 import CommentCard from '../commentCard';
 import AllergyCard from '../allergyCard';
+import Lodging from '../Lodging';
+import Team from '../Team';
 
 export default function RouteSwitch({dashboard}) {
 	return (
@@ -12,9 +14,9 @@ export default function RouteSwitch({dashboard}) {
           
         <Route path='/guests' element={<GuestList dashboard={dashboard}/>} />
           
-        <Route path='/lodging' />
+        <Route path='/lodgings' element={<Lodging dashboard={dashboard}/>} />
 
-        <Route path='/teams' />
+        <Route path='/teams'  element={<Team dashboard={dashboard}/>} />
 
         <Route path='/comments' element={<CommentCard dashboard={dashboard}/>} />
 
