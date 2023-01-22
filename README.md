@@ -5,7 +5,7 @@ A dashboard for wedding planners to view invitation responses. Planners can view
 
 View the site at: [This Link](https://wedding-dashboard-nhdhfrhti-mkbonini.vercel.app/)
 
-![](src/Images/capstone.gif)
+<img src="images/wedding-dashboard.gif" alt="gif of website" width="600">
 
 ---
 
