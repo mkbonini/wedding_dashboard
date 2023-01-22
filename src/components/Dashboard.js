@@ -78,11 +78,11 @@ function DashboardContent() {
   };
 
   useEffect(() => {
-    (async () => {
-      let dashboardResult = await getDashboard();
-      setDashboard(dashboardResult);
-      setLoading(false)
-    })();
+      (async () => {
+        let dashboardResult = await getDashboard();
+        setDashboard(dashboardResult);
+        setLoading(false)
+      })();
   }, []);
 
   return (
