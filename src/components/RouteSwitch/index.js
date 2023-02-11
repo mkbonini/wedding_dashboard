@@ -2,7 +2,7 @@
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import DashboardData from '../DashboardData';
-import GuestList from '../guestList';
+import GuestList from '../GuestList';
 import CommentCard from '../CommentCard';
 import AllergyCard from '../AllergyCard';
 import Lodging from '../Lodging';
