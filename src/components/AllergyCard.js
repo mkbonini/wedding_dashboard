@@ -10,7 +10,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Title from './Title';
 
-export default function GuestList({ dashboard }) {
+export default function AllergyCard({ dashboard }) {
 	const diets = dashboard?.diets.filter((diet) => diet.diet !== '');
 	return (
 		<Grid item xs={12} sx={{ margin: '1rem' }}>
