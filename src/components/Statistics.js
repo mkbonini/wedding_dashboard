@@ -1,56 +1,103 @@
-import * as React from "react";
-import Typography from "@mui/material/Typography";
-import Title from "./Title";
-import styled from "styled-components";
+/** @format */
+
+import * as React from 'react';
+import Typography from '@mui/material/Typography';
+import Grid from '@mui/material/Grid';
+import Paper from '@mui/material/Paper';
+import Title from './Title';
+import Countdown from './Countdown';
+import styled from 'styled-components';
 
 export const StatisticsContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
 
-  &.mt{
-    margin-top: 10px;
-  }
+	&.mt {
+		margin-top: 10px;
+	}
 `;
 
 export default function Statistics({ dashboard }) {
-  return (
-    <React.Fragment>
-      <Title>Headcount</Title>
-      <StatisticsContainer className='mt'>
-        <Typography color="text.secondary" sx={{ flex: 1, maxWidth: "65%" }}>
-          Guests:
-        </Typography>
-        <Typography component="p" variant="h5">
-          {dashboard?.rsvp_statistics?.total}
-        </Typography>
-      </StatisticsContainer>
-
-      <StatisticsContainer>
-        <Typography color="text.secondary" sx={{ flex: 1, maxWidth: "65%" }}>
-          Breakfasts:
-        </Typography>
-        <Typography component="p" variant="h5">
-          {dashboard?.breakfast_statistics?.yes}
-        </Typography>
-      </StatisticsContainer>
-      <StatisticsContainer>
-        <Typography color="text.secondary" sx={{ flex: 1, maxWidth: "65%" }}>
-          Dodgeball:
-        </Typography>
-        <Typography component="p" variant="h5">
-          {dashboard?.dodge_ball_statistics?.yes}
-        </Typography>
-      </StatisticsContainer>
-      <StatisticsContainer>
-        <Typography color="text.secondary" sx={{ flex: 1, maxWidth: "65%" }}>
-          Campers:
-        </Typography>
-        <Typography component="p" variant="h5">
-          {dashboard?.lodging_statistics?.onsite}
-        </Typography>
-      </StatisticsContainer>
-    </React.Fragment>
-  );
+	const totalGuests = dashboard?.rsvp_statistics?.total;
+	const breakfast = dashboard?.breakfast_statistics?.yes;
+	const dodgeball = dashboard?.dodge_ball_statistics?.yes;
+	const onsite = dashboard?.lodging_statistics?.onsite;
+	return (
+		<React.Fragment>
+			<Grid item xs={12} md={6} lg={2.6}>
+				<Paper
+					sx={{
+						p: 2,
+						display: 'flex',
+						flexDirection: 'column',
+						height: 130,
+					}}
+				>
+					<Countdown />
+				</Paper>
+			</Grid>
+			<Grid item xs={12} md={6} lg={2.3}>
+				<Paper
+					sx={{
+						p: 2,
+						display: 'flex',
+						flexDirection: 'column',
+						height: 130,
+					}}
+				>
+					<Title>Total Guests</Title>
+					<Typography component='p' sx={{ fontSize: '25px' }}>
+						{totalGuests}
+					</Typography>
+				</Paper>
+			</Grid>
+			<Grid item xs={12} md={6} lg={2.3}>
+				<Paper
+					sx={{
+						p: 2,
+						display: 'flex',
+						flexDirection: 'column',
+						height: 130,
+					}}
+				>
+					<Title>Breakfast</Title>
+					<Typography component='p' sx={{ fontSize: '25px' }}>
+						{breakfast}
+					</Typography>
+				</Paper>
+			</Grid>
+			<Grid item xs={12} md={6} lg={2.5}>
+				<Paper
+					sx={{
+						p: 2,
+						display: 'flex',
+						flexDirection: 'column',
+						height: 130,
+					}}
+				>
+					<Title>Playing Dodgeball</Title>
+					<Typography component='p' sx={{ fontSize: '25px' }}>
+						{dodgeball}
+					</Typography>
+				</Paper>
+			</Grid>
+			<Grid item xs={12} md={6} lg={2.3}>
+				<Paper
+					sx={{
+						p: 2,
+						display: 'flex',
+						flexDirection: 'column',
+						height: 130,
+					}}
+				>
+					<Title>Lodging Onsite</Title>
+					<Typography component='p' sx={{ fontSize: '25px' }}>
+						{onsite}
+					</Typography>
+				</Paper>
+			</Grid>
+		</React.Fragment>
+	);
 }
