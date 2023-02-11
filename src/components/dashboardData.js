@@ -4,7 +4,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import Paper from '@mui/material/Paper';
 import Chart from './Chart';
-import ArrivalChart from './arrivalChart';
+import ArrivalChart from './ArrivalChart';
 import Statistics from './Statistics';
 import Attending from './Attending';
 

@@ -16,7 +16,7 @@ import Badge from '@mui/material/Badge';
 import MenuIcon from '@mui/icons-material/Menu';
 import ChevronLeftIcon from '@mui/icons-material/ChevronLeft';
 import NotificationsIcon from '@mui/icons-material/Notifications';
-import { mainListItems } from './listItems';
+import { mainListItems } from './ListItems';
 import RouteSwitch from './RouteSwitch';
 import { getDashboard } from '../Model.tsx';
 import LinearProgress from '@mui/material/LinearProgress';
